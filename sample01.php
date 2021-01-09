@@ -19,7 +19,7 @@
 <h2>Practice</h2>
 <pre>
 <?php
-print('PHPを勉強中です！');
+print 'PHPを勉強中です！';
 ?>
 </pre>
 </main>
