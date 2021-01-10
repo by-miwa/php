@@ -19,15 +19,13 @@
 <h2>Practice</h2>
 <pre>
 <?php
-$success = file_put_contents('../../news_date/news.txt', 
-'2018-06-01 ホームページをリニューアルしました');
-if ($success) {
-  print('ファイルへの書き込みが完了しました');
-} else {
-  print('書き込み失敗');
-}
-
-
+$xmlTree = simplexml_load_file('https://h2o-space.com/feed/');
+foreach ($xmlTree->channel->item as $item):
+?>
+. <a href="<?php print($item->link); ?>"><?php print
+($item->title); ?></a>
+<?php
+endforeach;
 ?>
 </pre>
 </main>
